@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartQueue - Appointment & Queue Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="Stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-clock"></i>
+                <span>SmartQueue</span>
+            </div>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="47">0</span>
+                    <span class="stat-label">People Waiting</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-label">Avg Wait Time</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Appointment Booking Section -->
+            <section class="booking-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-plus"></i> Book Appointment</h2>
+                    <p>Secure your spot instantly. No more uncertainty.</p>
+                </div>
+                
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Phone</label>
+                            <input type="tel" placeholder="Phone number">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-clock"></i> Preferred Time</label>
+                        <select>
+                            <option>Next Available Slot</option>
+                            <option>15:00 - 15:30</option>
+                            <option>15:30 - 16:00</option>
+                            <option>16:00 - 16:30</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary btn-large">
+                        <i class="fas fa-lock"></i> Book Now
+                    </button>
+                </div>
+            </section>
+
+            <!-- Live Queue Tracker -->
+            <section class="queue-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> Live Queue Status</h2>
+                    <p>Your position updates in real-time. Check back anytime.</p>
+                </div>
+
+                <div class="queue-stats">
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div>
+                            <span class="stat-big">47</span>
+                            <span>Total Waiting</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                        <div>
+                            <span class="stat-big">12</span>
+                            <span>Your Position</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <span class="stat-big">23</span>
+                            <span>Minutes Left</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="queue-visualizer">
+                    <div class="progress-ring">
+                        <svg width="160" height="160">
+                            <circle class="progress-bg" cx="80" cy="80" r="70"></circle>
+                            <circle class="progress-fill" cx="80" cy="80" r="70" stroke-dasharray="439.6" stroke-dashoffset="175"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <span class="progress-number">12</span>
+                            <span class="progress-label">of 47</span>
+                        </div>
+                    </div>
+                    <div class="queue-info">
+                        <h3>Your Token: <span class="token-number">#A124</span></h3>
+                        <div class="eta">
+                            <i class="fas fa-clock"></i>
+                            <span>ETA: 23 minutes</span>
+                        </div>
+                        <button class="btn-secondary">
+                            <i class="fas fa-bell"></i> Notify Me
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Queue List -->
+                <div class="queue-list">
+                    <div class="queue-item current">
+                        <div class="queue-number">NOW SERVING</div>
+                        <div class="queue-token">#A112</div>
+                        <div class="queue-name">Mr. Rajesh Kumar</div>
+                    </div>
+                    <div class="queue-item ahead">
+                        <div class="queue-number">+1</div>
+                        <div class="queue-token">#A113</div>
+                        <div class="queue-name">Ms. Priya Sharma</div>
+                    </div>
+                    <div class="queue-item ahead">
+                        <div class="queue-number">+2</div>
+                        <div class="queue-token">#A114</div>
+                        <div class="queue-name">Dr. Anil Patel</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button class="fab">
+        <i class="fas fa-qrcode"></i>
+    </button>
+
+    <!-- Voice Assistant Bubble -->
+    <div class="voice-bubble">
+        <i class="fas fa-microphone"></i>
+        <span>Voice Check-in</span>
+    </div>
+</body>
+</html>
